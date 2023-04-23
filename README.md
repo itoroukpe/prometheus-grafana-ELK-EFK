@@ -130,7 +130,7 @@ Use Helm to provision promotheus and Grafana
 -	$ helm repo ls
 1.	Add helm repo which contains Prometheus and Grafana Charts.
 ```
--	$ helm repo add stable “https:charts.helm.sh/stable”
+-	$ helm repo add stable https://charts.helm.sh/stable
 -	$ helm repo ls
 -	$ chmod 400 /home/ubuntu/ .kube/config
 -	$ helm search repo  #all the repository link to the repo
