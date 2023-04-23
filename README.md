@@ -122,4 +122,49 @@ Monitor metrics and create visualizations: With Prometheus up and running, you c
 Overall, configuring Prometheus involves defining the scrape targets, configuring the time-series database, and setting up alerting. With these steps complete, you can start monitoring your systems and applications and create custom visualizations and alerts to stay on top of potential issues.
 
 ## Deploy Prometheus, Exporters, Alert Manager, & Grafana
+clone repository: https://github.com/itoroukpe/prometheus-grafana-ELK-EFK
+```
+$ git clone https://github.com/itoroukpe/prometheus-grafana-ELK-EFK
+```
+Use Helm to provision promotheus and Grafana
+-	$ helm repo ls
+1.	Add helm repo which contains Prometheus and Grafana Charts.
+-	$ helm repo add stable “https:charts.helm.sh/stable”
+-	$ helm repo ls
+-	$ chmod 400 /home/ubuntu/ .kube/config
+-	$ helm search repo  #all the repository link to the repo
+-	$ helm search repo | grep for Prometheus
+-	$ helm show values stable/Prometheus  >> p.yml
+-	$ vi p.yml
+From the git file, to promotheus.values and see the all the configurations
+Do custom configurations on “alertmanagerFiles:” where to send message to
+-	
+2.	Create a namespace in which will deploy Prometheus & it’s components
+-	$ kubectl create ns monitoring
+3.	Get Prometheus values file
+-	$ helm show values stable/Prometheus >> prometheusvalues.yml
+4.	Update prometheusvalues.yml file to update service types and add a SMTP details. 
+5.	Deploy using helm with updated values file
+-	$ helm install -f prometheus.values.yml Prometheus stable/Prometheus
+-	or
+-	$ helm install Prometheus stable/Prometheus -n monitoring -f Prometheus.values.yml
+6.	Get Grafana values files
+7.	See if Prometheus has been deployed
+-	$ helm ls -n monitoring
+-	$ kubectl get all -n monitoring
+-	$ kubectl get node -o wide
+-	$ kubectl get pod – o wide
+Try to access the resources – alertManager and Prometheus
+You need the public ip to access the resources.
+$ kubectl edit svc Prometheus-alertmanager -n monitoring
+Change the NodePort to LoadBalancer
+$ kubectl get svc -n monitoring
+8.	Deploy Grafana in monitoring namespace
+$ helm install Grafana stable/Grafana -n monitoring -f grafana.values
+-	$ kubectl get all -n monitoring
+-	$ kubectl edit deployment.apps/grafana -n monitoring
+-	kubectl edit svc grafana -n monitoring # change service type to LoadBalancer
+-	$ kubectl get svc -n monitoring
+
+
 
