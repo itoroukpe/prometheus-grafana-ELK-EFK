@@ -336,16 +336,16 @@ stable-prometheus-node-exporter           ClusterIP      100.66.152.213   <none>
 How to Install Prometheus and Grafana on Kubernetes using Helm 3 2
 
 ### #5: Access Prometheus and Grafana WEB Interface
-To access Prometheus web interface copy Loadbalancer URL and port number 9090
+To access Prometheus web interface copy Loadbalancer URL and port number 
 ```
-http://a9042a504d25f4122b6aa52ed5e53b57-356305290.ap-south-1.elb.amazonaws.com:9090
+http://<Node-IpAddress:<loadBalancer-Port>
 ```
 Output:
 
 How to Install Prometheus and Grafana on Kubernetes using Helm 3 3
-To access Grafana web interface copy Loadbalancer URL and port number 80
+To access Grafana web interface copy Loadbalancer URL and port number 
 ```
-http://a7ebeb0da858f42328904560e7ce83c5-996403152.ap-south-1.elb.amazonaws.com
+http://<Node-IpAddress:<loadBalancer-Port>
 ```
 How to Install Prometheus and Grafana on Kubernetes using Helm 3 4
 you will redirected to Grafana dashboard, it will prompt for username and Password, below are default credentials for Grafana
@@ -357,14 +357,10 @@ Password: prom-operator
 ```
 after successfully logged in Grafana dashboard, click on Manage to see Kubernetes cluster
 
-How to Install Prometheus and Grafana on Kubernetes using Helm 3 5
 
-once clicked on manage, you will see Kubernetes cluster
 
-How to Install Prometheus and Grafana on Kubernetes using Helm 3 6
-Conclusion:
 
-We have covered How to Install Prometheus and Grafana on Kubernetes using Helm 3
+
 
 
 
