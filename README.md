@@ -120,3 +120,6 @@ Start the Prometheus server: Once you have defined the scrape targets, configure
 Monitor metrics and create visualizations: With Prometheus up and running, you can start monitoring the metrics and creating visualizations using tools like Grafana. Grafana provides a rich set of visualization options and can be easily integrated with Prometheus to create custom dashboards and alerts.
 
 Overall, configuring Prometheus involves defining the scrape targets, configuring the time-series database, and setting up alerting. With these steps complete, you can start monitoring your systems and applications and create custom visualizations and alerts to stay on top of potential issues.
+
+## Deploy Prometheus, Exporters, Alert Manager, & Grafana
+
