@@ -1,7 +1,7 @@
 # Prometheus-Grafana-ELK-EFK
 
 <p align="center">
-<img src="prometheus-grafana-ELK-EFK/prometheus-architecture.png" width="300" alt="Prometheus-Grafana" />
+<img src="prometheus-grafana-ELK-EFK/prometheus-architecture.png" alt="Prometheus-Grafana" />
 </p>
 
 ## Alert Manager
